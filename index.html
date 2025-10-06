@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Pembelajaran | Cover & Tabel Dokumen</title>
+    <title>Media Pembelajaran | Dokumen Profesional</title>
     <!-- Memuat Tailwind CSS CDN untuk styling yang responsif dan modern -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Mengatur font Inter sebagai standar -->
+    <!-- Mengatur font Inter dan palet warna yang lebih profesional -->
     <script>
         tailwind.config = {
             theme: {
@@ -15,66 +15,75 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#007bff',
-                        'secondary': '#6c757d',
-                        'accent': '#28a745',
-                        'background': '#f8f9fa',
+                        // Palet Warna yang Lebih Profesional dan Kontras
+                        'primary': '#1e40af', // Deep Blue (Eksklusif)
+                        'accent': '#059669', // Emerald Green (Positif/Material)
+                        'secondary': '#6b7280',
+                        'background': '#f9fafb', // Sangat terang untuk latar belakang
                         'card': '#ffffff',
+                        'practice': '#ecfdf5', // Sangat light green untuk modul praktik
+                        'upload-btn': '#ef4444', // Strong Red (Aksi Penting)
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom styling untuk tampilan Dokumen Praktik */
-        #practice-document-output {
+        /* CSS Tambahan untuk Kerapian Dokumen Output */
+        .document-output {
             min-height: 400px;
             padding: 24px;
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
             overflow-x: auto;
-            white-space: pre-wrap; /* Memastikan teks panjang pindah baris */
+            white-space: pre-wrap;
         }
 
-        /* Styling untuk tabel di dalam konten */
-        #practice-document-output table {
+        .document-output table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 16px;
         }
-        #practice-document-output th, #practice-document-output td {
-            border: 1px solid #cbd5e1;
-            padding: 8px;
+        .document-output th, .document-output td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
             text-align: left;
         }
-        #practice-document-output th {
-            background-color: #f1f5f9;
+        .document-output th {
+            background-color: #f3f4f6;
+            font-weight: 600;
         }
     </style>
 </head>
 <body class="bg-background min-h-screen font-sans">
 
     <div class="container mx-auto p-4 md:p-8 max-w-4xl">
-        <header class="mb-6">
-            <h1 class="text-3xl font-bold text-primary text-center rounded-lg p-3 bg-white shadow-md">Media Pembelajaran: Pembuatan Dokumen Profesional</h1>
+        <header class="mb-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-primary text-center p-4 bg-white rounded-xl shadow-lg border-b-4 border-accent">
+                MEDIA PEMBELAJARAN: Pembuatan Dokumen Profesional
+            </h1>
         </header>
 
-        <!-- Navigasi Tab -->
-        <nav class="flex space-x-1 p-1 bg-white rounded-xl shadow-lg mb-6" id="tabs-container">
-            <button data-tab="cover-table" class="tab-button w-full py-2.5 text-sm leading-5 font-medium rounded-lg transition-colors duration-150 bg-primary text-white shadow-md hover:bg-blue-600 focus:outline-none">
-                Cover & Tabel (Materi & Praktik)
+        <!-- Navigasi Tab Modern -->
+        <nav class="flex space-x-1 p-1 bg-white rounded-xl shadow-xl mb-8" id="tabs-container">
+            <button data-tab="cover-table" class="tab-button w-full py-3 text-base leading-5 font-semibold rounded-lg transition-all duration-300 focus:outline-none">
+                <span class="block">Cover & Tabel</span>
+                <span class="text-xs font-normal text-gray-400">Materi dan Praktik 1</span>
             </button>
-            <button data-tab="mail-merge" class="tab-button w-full py-2.5 text-sm leading-5 font-medium rounded-lg transition-colors duration-150 text-secondary hover:bg-gray-100 focus:outline-none">
-                Mail Merge
+            <button data-tab="mail-merge" class="tab-button w-full py-3 text-base leading-5 font-semibold rounded-lg transition-all duration-300 focus:outline-none text-secondary hover:bg-gray-100">
+                <span class="block">Mail Merge</span>
+                <span class="text-xs font-normal text-gray-400">Materi dan Praktik 2</span>
             </button>
-            <button data-tab="upload-tugas" class="tab-button w-full py-2.5 text-sm leading-5 font-medium rounded-lg transition-colors duration-150 text-secondary hover:bg-gray-100 focus:outline-none">
-                Upload Tugas
+            <button data-tab="upload-tugas" class="tab-button w-full py-3 text-base leading-5 font-semibold rounded-lg transition-all duration-300 focus:outline-none text-secondary hover:bg-gray-100">
+                <span class="block">Upload Tugas</span>
+                <span class="text-xs font-normal text-gray-400">Pengumpulan Akhir</span>
             </button>
         </nav>
 
         <!-- Konten Tab -->
-        <div id="tab-content" class="bg-card p-6 rounded-xl shadow-lg">
+        <div id="tab-content" class="bg-card p-6 md:p-8 rounded-xl shadow-xl">
             <!-- Konten akan dimuat di sini oleh JavaScript -->
         </div>
 
@@ -102,7 +111,7 @@
 <hr class="my-8 border-gray-300">
 
 <h2 class="text-xl font-bold mb-4">Daftar Inventaris Peralatan IT (Simulasi)</h2>
-<p class="text-sm italic">Instruksi: Salin naskah ini ke aplikasi pengolah kata, lalu atur margin, spasi, dan format tabel.</p>
+<p class="text-sm italic text-red-600 font-semibold">Instruksi: Salin naskah ini, atur margin, spasi, dan format tabel (gunakan Merge Cell jika perlu).</p>
 <table>
     <thead>
         <tr>
@@ -151,8 +160,9 @@
         </tr>
     </tbody>
 </table>
-<div class="mt-8 text-sm text-gray-600">
-    <p><strong>Tujuan Praktik:</strong> Melatih penataan cover, penggunaan berbagai jenis Border (untuk Cover), serta pemformatan tabel dengan penggabungan sel (Merge Cell) dan penyesuaian lebar kolom.</p>
+<div class="mt-8 p-3 bg-blue-50 border-l-4 border-blue-400 text-sm text-blue-800">
+    <p class="font-bold">Fokus Praktik:</p>
+    <p>Penataan Cover, penggunaan Page Border, dan Pemformatan Tabel Dasar.</p>
 </div>
         `;
 
@@ -176,7 +186,7 @@
 <hr class="my-8 border-gray-300">
 
 <h2 class="text-xl font-bold mb-4">Rincian Anggaran Biaya (RAB) Proyek Jaringan (Simulasi)</h2>
-<p class="text-sm italic">Instruksi: Salin naskah ini ke aplikasi pengolah kata, lalu terapkan Border khusus pada Cover dan hitung Total Anggaran pada kolom Total Biaya.</p>
+<p class="text-sm italic text-red-600 font-semibold">Instruksi: Salin naskah ini, terapkan Page Border pada Cover, dan hitung Total Anggaran pada kolom Total Biaya.</p>
 <table>
     <thead>
         <tr>
@@ -217,66 +227,63 @@
             <td>500.000</td>
         </tr>
         <tr>
-            <td colspan="4" class="text-right font-bold bg-gray-100">TOTAL KESELURUHAN</td>
-            <td class="font-bold bg-gray-100">2.625.000</td>
+            <td colspan="4" class="text-right font-bold bg-gray-200">TOTAL KESELURUHAN</td>
+            <td class="font-bold bg-gray-200">2.625.000</td>
         </tr>
     </tbody>
 </table>
-<div class="mt-8 text-sm text-gray-600">
-    <p><strong>Tujuan Praktik:</strong> Melatih penyusunan proposal, penataan cover dengan tata letak kompleks, dan penggunaan fungsi perhitungan dalam tabel, serta penggabungan sel (Merge Cell) untuk baris Total.</p>
+<div class="mt-8 p-3 bg-blue-50 border-l-4 border-blue-400 text-sm text-blue-800">
+    <p class="font-bold">Fokus Praktik:</p>
+    <p>Penyusunan Cover Layout Lanjutan, penggunaan Page Border, dan Perhitungan/Formula Sederhana dalam Tabel.</p>
 </div>
         `;
 
         // Konten Materi Cover dan Tabel Tab 1
         const MATERI_COVER_TABLE = `
             <div class="space-y-6">
-                <h2 class="text-2xl font-bold text-primary border-b pb-2">Materi Pembelajaran: Cover Dokumen & Tabel Data</h2>
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-gray-200 pb-3 mb-4">Materi Pembelajaran: Cover Dokumen & Tabel Data</h2>
 
                 <!-- Materi Cover Dokumen -->
-                <div>
-                    <h3 class="text-xl font-semibold text-accent mb-2">1. Membuat Cover Dokumen (Halaman Sampul)</h3>
-                    <p class="text-gray-700">Cover dokumen adalah halaman pertama yang memberikan identitas visual dan informasi singkat tentang isi dokumen. Cover yang profesional wajib memenuhi aspek-aspek berikut:</p>
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-accent mb-3">1. Cover Dokumen dan Border Halaman</h3>
+                    <p class="text-gray-700">Cover profesional membutuhkan **keselarasan tata letak (center alignment)**, hierarki judul yang jelas, dan penggunaan fitur **Page Border** yang elegan. Hindari bingkai yang terlalu ramai.</p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-1 text-sm text-gray-600">
-                        <li><strong>Judul Utama:</strong> Harus jelas, ringkas, dan menggunakan ukuran font besar (misalnya 16-18pt) serta format tebal (Bold).</li>
-                        <li><strong>Informasi Pelengkap:</strong> Subjudul, Nama Penyusun/Institusi, Nomor Induk/Kelas, Logo, dan Tahun.</li>
-                        <li><strong>Penataan (Layout):</strong> Gunakan fitur **Center Alignment** (rata tengah) secara konsisten dan manfaatkan fitur **Line Spacing** (spasi baris) untuk memberikan ruang antar elemen agar terlihat 'bernapas' dan elegan.</li>
-                        <li><strong>Border Halaman (Page Border):</strong> Fitur ini sering digunakan untuk menambah bingkai dekoratif. Pastikan bingkai tidak terlalu ramai atau mencolok. Pilihlah bingkai yang sederhana dan formal.</li>
+                        <li>Gunakan spasi baris (line spacing) yang cukup untuk 'pernapasan' dokumen.</li>
+                        <li>Pastikan semua informasi penting (Judul, Nama, Institusi) berada di tengah secara vertikal dan horizontal.</li>
                     </ul>
                 </div>
 
                 <!-- Materi Tabel Data -->
-                <div>
-                    <h3 class="text-xl font-semibold text-accent mb-2">2. Memformat dan Menggunakan Tabel Data</h3>
-                    <p class="text-gray-700">Tabel digunakan untuk menyajikan data secara terstruktur dan mudah dibaca. Keterampilan kunci dalam memformat tabel:</p>
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-accent mb-3">2. Teknik Pemformatan Tabel</h3>
+                    <p class="text-gray-700">Kuasai **Merge Cells** (gabung sel) untuk judul yang melebar atau baris total, dan gunakan **AutoFit** agar kolom rapi otomatis. Perhatikan perataan teks (alignment):</p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-1 text-sm text-gray-600">
-                        <li><strong>Penyisipan:</strong> Tentukan jumlah Kolom dan Baris yang dibutuhkan. Selalu sisipkan tabel pada posisi kursor yang benar (misalnya setelah paragraf pendahuluan).</li>
-                        <li><strong>Merge Cells (Gabung Sel):</strong> Digunakan untuk menggabungkan dua sel atau lebih (misalnya untuk Judul Tabel yang membentang di atas semua kolom, atau pada baris 'TOTAL').</li>
-                        <li><strong>AutoFit:</strong> Gunakan opsi **AutoFit to Contents** atau **AutoFit to Window** untuk mengatur lebar kolom secara otomatis agar terlihat rapi.</li>
-                        <li><strong>Header Baris:</strong> Pastikan baris pertama (Header) diformat tebal dan diberi warna latar belakang yang berbeda agar menonjol.</li>
-                        <li><strong>Perataan Teks:</strong> Data numerik (angka) sebaiknya menggunakan rata kanan (**Right Alignment**) atau tengah (**Center Alignment**), sementara teks biasa menggunakan rata kiri (**Left Alignment**).</li>
+                        <li>**Rata Kiri:** Teks biasa (Nama, Uraian Item).</li>
+                        <li>**Rata Kanan/Tengah:** Angka atau data kuantitatif (Gaji, Jumlah Unit, Biaya).</li>
+                        <li>Gunakan warna latar belakang berbeda pada **Header** tabel.</li>
                     </ul>
                 </div>
 
-                <hr class="border-gray-300">
+                <hr class="border-gray-300 my-6">
 
                 <!-- Modul Praktik Tab 1 -->
-                <div class="mt-8 p-4 bg-gray-100 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-bold text-red-600 mb-4">MODUL PRAKTIK: Menyalin Naskah Dokumen</h3>
-                    <p class="text-sm mb-4">Masukkan **Nomor Absen** Anda untuk melihat naskah dokumen yang harus Anda salin dan format. Ini akan menguji kemampuan Anda dalam membuat Cover dan Tabel.</p>
+                <div class="mt-8 p-6 bg-practice rounded-lg shadow-inner border-t-4 border-accent">
+                    <h3 class="text-xl font-bold text-primary mb-4">MODUL PRAKTIK 1: Cover & Tabel</h3>
+                    <p class="text-sm mb-4 text-gray-700 font-medium">Masukkan **Nomor Absen** Anda untuk menerima naskah dokumen yang spesifik (Ganjil atau Genap). Salin naskah di bawah ini ke aplikasi pengolah kata dan terapkan pemformatan yang diminta.</p>
                     
-                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
-                        <input type="number" id="absen-input-t1" placeholder="Masukkan Nomor Absen (1, 2, 3, dst)" class="flex-grow p-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-                        <button id="generate-doc-button-t1" class="bg-accent text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-700 transition duration-150 shadow-md">
-                            Tampilkan Naskah
+                    <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                        <input type="number" id="absen-input-t1" placeholder="Nomor Absen (Contoh: 1, 2, 3)" class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary shadow-sm">
+                        <button id="generate-doc-button-t1" class="bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-800 transition duration-150 shadow-md flex-shrink-0">
+                            Tampilkan Naskah Praktik
                         </button>
                     </div>
 
                     <!-- Area Pesan/Peringatan -->
-                    <div id="message-area-t1" class="text-sm text-red-500 mt-2 hidden"></div>
+                    <div id="message-area-t1" class="text-sm mt-3 p-2 rounded hidden"></div>
 
                     <!-- Output Dokumen Praktik -->
-                    <div id="practice-document-output-t1" class="mt-6 rounded-lg text-sm">
-                        <p class="text-center text-gray-500">Naskah dokumen akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>
+                    <div id="practice-document-output-t1" class="document-output mt-6">
+                        <p class="text-center text-gray-500 italic">Naskah dokumen akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>
                     </div>
                 </div>
             </div>
@@ -312,8 +319,8 @@
 </div>
             `,
             data: `
-<h4 class="text-lg font-bold mt-8 mb-2">Sumber Data (Simulasi Excel/Database)</h4>
-<p class="text-xs italic text-red-600">Instruksi: Kolom Header (baris pertama) adalah Field yang harus Anda sisipkan pada naskah surat di atas.</p>
+<h4 class="text-lg font-bold mt-8 mb-2 text-primary">Sumber Data (Simulasi Excel)</h4>
+<p class="text-xs italic text-red-600 font-semibold">Gunakan kolom header (baris pertama) sebagai **Merge Field** Anda.</p>
 <table>
     <thead>
         <tr>
@@ -342,7 +349,6 @@
             <td>8.000.000</td>
             <td>5678xxxx</td>
         </tr>
-        <!-- Data ini akan digabungkan menjadi 2 surat terpisah -->
     </tbody>
 </table>
             `
@@ -353,15 +359,15 @@
             naskah: `
 <div class="p-4 border border-gray-300 rounded-lg shadow-sm mb-6 bg-white max-w-xs mx-auto text-center">
     <p class="text-md font-bold mb-2">Kepada Yth:</p>
-    <p class="text-lg font-extrabold">&lt;&lt;Nama Anak&gt;&gt; bin &lt;&lt;Nama Ayah&gt;&gt;</p>
-    <p class="text-sm mt-1">Alamat: &lt;&lt;Alamat Lengkap&gt;&gt;</p>
-    <p class="text-xs italic mt-4">Mohon hadir tepat waktu di: &lt;&lt;Lokasi Acara&gt;&gt;</p>
+    <p class="text-xl font-extrabold text-primary">&lt;&lt;Nama Anak&gt;&gt;</p>
+    <p class="text-sm mt-1">Putra dari Bapak: &lt;&lt;Nama Ayah&gt;&gt;</p>
+    <p class="text-sm mt-4 italic">Alamat: &lt;&lt;Alamat Lengkap&gt;&gt;</p>
     <p class="text-xs font-semibold mt-2">Kode Pos: &lt;&lt;Kode Pos&gt;&gt;</p>
 </div>
             `,
             data: `
-<h4 class="text-lg font-bold mt-8 mb-2">Sumber Data (Simulasi Excel/Database)</h4>
-<p class="text-xs italic text-red-600">Instruksi: Kolom Header (baris pertama) adalah Field yang harus Anda sisipkan pada template Label Undangan di atas.</p>
+<h4 class="text-lg font-bold mt-8 mb-2 text-primary">Sumber Data (Simulasi Excel)</h4>
+<p class="text-xs italic text-red-600 font-semibold">Gunakan kolom header (baris pertama) sebagai **Merge Field** Anda.</p>
 <table>
     <thead>
         <tr>
@@ -394,7 +400,6 @@
             <td>Balai Desa</td>
             <td>17214</td>
         </tr>
-        <!-- Data ini akan digabungkan menjadi 3 Label Undangan terpisah -->
     </tbody>
 </table>
             `
@@ -405,62 +410,72 @@
         // Konten Tab Mail Merge
         const MATERI_MAIL_MERGE = `
             <div class="space-y-6">
-                <h2 class="text-2xl font-bold text-primary border-b pb-2">Materi Pembelajaran: Mail Merge (Penggabungan Surat)</h2>
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-gray-200 pb-3 mb-4">Materi Pembelajaran: Mail Merge (Penggabungan Surat)</h2>
                 
-                <div>
-                    <h3 class="text-xl font-semibold text-accent mb-2">1. Apa Itu Mail Merge?</h3>
-                    <p class="text-gray-700">Mail Merge (Penggabungan Surat) adalah teknik membuat satu dokumen master (template) yang kemudian digabungkan dengan sumber data (Data Source) untuk menghasilkan banyak dokumen individual secara otomatis. Ini sangat efisien untuk surat, label alamat, sertifikat, atau amplop dalam jumlah besar.</p>
-                    <p class="text-gray-700 mt-2 font-medium">Bayangkan Anda perlu mengirim 100 surat gaji, hanya perlu membuat 1 template surat, dan data 100 karyawan (nama, gaji, rekening) diambil dari file Excel. Ini menghemat waktu dan meminimalisir kesalahan pengetikan.</p>
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-accent mb-3">1. Konsep Dasar Mail Merge</h3>
+                    <p class="text-gray-700">Mail Merge menggabungkan **Dokumen Utama** (Template) dengan **Sumber Data** (Excel/Database) untuk menghasilkan dokumen massal (surat, label, sertifikat) tanpa perlu mengetik ulang data satu per satu. Ini adalah fitur wajib untuk efisiensi perkantoran.</p>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-semibold text-accent mb-2">2. Komponen Utama Mail Merge</h3>
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-accent mb-3">2. Langkah Penting</h3>
                     <ol class="list-decimal list-inside ml-4 space-y-2 text-sm text-gray-600">
-                        <li><strong>Dokumen Utama (Main Document):</strong> Ini adalah template, misalnya surat resmi. Di sinilah Anda menyisipkan **Merge Field**.</li>
-                        <li><strong>Sumber Data (Data Source):</strong> Biasanya berupa file **Microsoft Excel**, **Access**, atau tabel di Word itu sendiri. Ini berisi informasi unik, di mana:
-                            <ul class="list-circle list-inside ml-4">
-                                <li>**Kolom** = **Field Name** (Nama Bidang, misal: Nama, Alamat, Gaji).</li>
-                                <li>**Baris** = **Record** (Catatan data satu orang/item).</li>
-                            </ul>
-                        </li>
-                        <li><strong>Merge Field (Bidang Gabungan):</strong> Ini adalah placeholder (misal: &lt;&lt;Nama&gt;&gt;) yang Anda letakkan di Dokumen Utama. Saat proses Mail Merge dijalankan, placeholder ini akan diganti dengan data aktual dari Sumber Data (misalnya, diganti menjadi "Budi Santoso").</li>
+                        <li>Siapkan **Sumber Data** yang rapi (kolom header harus unik).</li>
+                        <li>Buat **Dokumen Utama** (surat/label) dan sisipkan **Merge Field** (&lt;&lt;Nama&gt;&gt;) dari Sumber Data ke dalamnya.</li>
+                        <li>Jalankan proses Mail Merge (Finishing) untuk menghasilkan dokumen individual.</li>
                     </ol>
                 </div>
 
-                <hr class="border-gray-300">
+                <hr class="border-gray-300 my-6">
 
                 <!-- Modul Praktik Tab 2 -->
-                <div class="mt-8 p-4 bg-yellow-100 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-bold text-orange-700 mb-4">MODUL PRAKTIK: Template Mail Merge</h3>
-                    <p class="text-sm mb-4">Masukkan **Nomor Absen** Anda untuk mendapatkan Dokumen Utama (Template Surat/Label) dan Sumber Datanya. Anda harus mempraktikkan proses penggabungan di aplikasi pengolah kata Anda.</p>
+                <div class="mt-8 p-6 bg-yellow-50 rounded-lg shadow-inner border-t-4 border-yellow-500">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">MODUL PRAKTIK 2: Mail Merge</h3>
+                    <p class="text-sm mb-4 text-gray-700 font-medium">Masukkan **Nomor Absen** Anda untuk mendapatkan Template Surat (Ganjil) atau Label (Genap) beserta Sumber Datanya. Lakukan proses **Mail Merge** di aplikasi pengolah kata Anda.</p>
                     
-                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
-                        <input type="number" id="absen-input-t2" placeholder="Masukkan Nomor Absen (1, 2, 3, dst)" class="flex-grow p-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-                        <button id="generate-doc-button-t2" class="bg-orange-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-orange-700 transition duration-150 shadow-md">
-                            Tampilkan Template
+                    <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                        <input type="number" id="absen-input-t2" placeholder="Nomor Absen (Contoh: 1, 2, 3)" class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-orange-700 focus:border-orange-700 shadow-sm">
+                        <button id="generate-doc-button-t2" class="bg-orange-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-orange-700 transition duration-150 shadow-md flex-shrink-0">
+                            Tampilkan Template & Data
                         </button>
                     </div>
 
                     <!-- Area Pesan/Peringatan -->
-                    <div id="message-area-t2" class="text-sm text-red-500 mt-2 hidden"></div>
+                    <div id="message-area-t2" class="text-sm mt-3 p-2 rounded hidden"></div>
 
                     <!-- Output Dokumen Praktik -->
-                    <div id="practice-document-output-t2" class="mt-6 rounded-lg text-sm">
-                        <p class="text-center text-gray-500">Template dan Sumber Data akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>
+                    <div id="practice-document-output-t2" class="document-output mt-6">
+                        <p class="text-center text-gray-500 italic">Template dan Sumber Data akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>
                     </div>
                 </div>
             </div>
         `;
 
-        // Konten Tab Upload Tugas (Tab 3) - Sekarang berisi Google Form
+        // Konten Tab Upload Tugas (Tab 3) - Button style
+        const NEW_GOOGLE_FORM_URL = "https://forms.gle/n8LCEvp2wJdRiL8k9";
+
         const TAB_UPLOAD_TUGAS = `
-            <h2 class="text-2xl font-bold text-primary border-b pb-2">Tab Upload Tugas Akhir: Google Form</h2>
-            <div class="space-y-4 mt-4 p-4 bg-gray-50 rounded-lg">
-                <p class="text-lg text-gray-700">Silakan isi formulir di bawah ini untuk mengunggah hasil praktik Anda (File .DOCX atau .PDF) dan mengisi data diri Anda.</p>
-                <div class="mt-4 border-2 border-gray-300 rounded-lg overflow-hidden h-[800px] w-full">
-                    <iframe src="https://forms.gle/n8LCEvp2wJdRiL8k9" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Memuat Formulir Google...</iframe>
-                </div>
-                <p class="text-sm text-gray-600 italic">Pastikan Anda menekan tombol "Kirim/Submit" di bagian bawah formulir setelah selesai.</p>
+            <div class="flex flex-col items-center justify-center p-8 text-center min-h-[400px]">
+                <h2 class="text-3xl font-bold text-primary mb-4">Waktunya Kumpul Tugas!</h2>
+                <p class="text-lg text-gray-700 mb-10 max-w-lg">Pastikan file tugas Anda (hasil praktik Cover & Tabel serta Mail Merge) sudah selesai dan tersimpan dengan format yang benar (.DOCX atau .PDF). Klik tombol di bawah ini untuk mengunggahnya.</p>
+                
+                <a href="${NEW_GOOGLE_FORM_URL}" target="_blank" class="
+                    bg-upload-btn text-white text-xl md:text-2xl font-extrabold 
+                    py-5 px-12 rounded-2xl shadow-2xl transition duration-300 
+                    transform hover:scale-[1.02] hover:bg-red-600 
+                    focus:outline-none focus:ring-4 focus:ring-red-300 uppercase
+                    flex items-center space-x-3
+                ">
+                    <!-- Ikon Panah ke Atas (Upload) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <span>Klik Disini untuk Kumpul Tugas</span>
+                </a>
+
+                <p class="text-sm text-gray-500 italic mt-8">Tautan akan terbuka di jendela baru. Mohon isi data diri dan unggah file dengan teliti.</p>
             </div>
         `;
 
@@ -474,11 +489,18 @@
             // Update Tampilan Tombol
             tabButtons.forEach(button => {
                 const isActive = button.getAttribute('data-tab') === tabName;
-                button.classList.toggle('bg-primary', isActive);
-                button.classList.toggle('text-white', isActive);
-                button.classList.toggle('text-secondary', !isActive);
-                button.classList.toggle('hover:bg-blue-600', isActive);
-                button.classList.toggle('hover:bg-gray-100', !isActive);
+                
+                // Reset classes
+                button.classList.remove('bg-primary', 'text-white', 'shadow-md', 'hover:bg-blue-800', 'text-secondary', 'hover:bg-gray-100');
+                
+                // Apply active/inactive styles
+                if (isActive) {
+                    button.classList.add('bg-primary', 'text-white', 'shadow-md', 'hover:bg-blue-800');
+                    button.querySelector('span:last-child').classList.remove('text-gray-400'); // Remove secondary text color when active
+                } else {
+                    button.classList.add('text-secondary', 'hover:bg-gray-100');
+                    button.querySelector('span:last-child').classList.add('text-gray-400');
+                }
             });
 
             // Muat Konten
@@ -486,12 +508,12 @@
             switch (tabName) {
                 case 'cover-table':
                     content = MATERI_COVER_TABLE;
-                    // Ensure the correct setup function is called
+                    // Ensure the correct setup function is called after content load
                     setTimeout(() => setupPracticeModuleT1(), 0);
                     break;
                 case 'mail-merge':
                     content = MATERI_MAIL_MERGE;
-                    // Ensure the correct setup function is called
+                    // Ensure the correct setup function is called after content load
                     setTimeout(() => setupPracticeModuleT2(), 0);
                     break;
                 case 'upload-tugas':
@@ -508,10 +530,7 @@
             const output = document.getElementById('practice-document-output-t1');
             const messageArea = document.getElementById('message-area-t1');
 
-            if (!button) return; // Exit if element not found (e.g., in other tabs)
-
-            // Hapus listener lama jika ada untuk mencegah duplikasi
-            button.onclick = null; 
+            if (!button) return;
 
             button.onclick = () => {
                 const absenValue = input.value.trim();
@@ -519,11 +538,11 @@
                 output.innerHTML = '';
                 
                 if (!absenValue || isNaN(parseInt(absenValue)) || parseInt(absenValue) <= 0) {
-                    messageArea.textContent = 'Mohon masukkan Nomor Absen yang valid (angka positif).';
+                    messageArea.textContent = '❌ Mohon masukkan Nomor Absen yang valid (angka positif).';
                     messageArea.classList.remove('hidden');
-                    messageArea.classList.remove('text-green-600');
-                    messageArea.classList.add('text-red-500');
-                    output.innerHTML = '<p class="text-center text-gray-500">Naskah dokumen akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>';
+                    messageArea.classList.remove('bg-green-100', 'text-green-800');
+                    messageArea.classList.add('bg-red-100', 'text-red-800');
+                    output.innerHTML = '<p class="text-center text-gray-500 italic">Naskah dokumen akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>';
                     return;
                 }
 
@@ -532,17 +551,17 @@
                 if (absenNumber % 2 !== 0) {
                     // Ganjil
                     output.innerHTML = DOCUMENT_ODD_T1;
-                    messageArea.textContent = 'Anda mendapat Naskah LAPORAN INVENTARIS IT (Nomor Absen Ganjil).';
+                    messageArea.textContent = '✅ Anda mendapat Naskah LAPORAN INVENTARIS IT (Nomor Absen Ganjil). Fokus pada Page Border dan Table Formatting.';
                     messageArea.classList.remove('hidden');
-                    messageArea.classList.remove('text-red-500');
-                    messageArea.classList.add('text-green-600');
+                    messageArea.classList.remove('bg-red-100', 'text-red-800');
+                    messageArea.classList.add('bg-green-100', 'text-green-800');
                 } else {
                     // Genap
                     output.innerHTML = DOCUMENT_EVEN_T1;
-                    messageArea.textContent = 'Anda mendapat Naskah PROPOSAL ANGGARAN PROYEK (Nomor Absen Genap).';
+                    messageArea.textContent = '✅ Anda mendapat Naskah PROPOSAL ANGGARAN PROYEK (Nomor Absen Genap). Fokus pada Cover Layout dan Perhitungan Tabel.';
                     messageArea.classList.remove('hidden');
-                    messageArea.classList.remove('text-red-500');
-                    messageArea.classList.add('text-green-600');
+                    messageArea.classList.remove('bg-red-100', 'text-red-800');
+                    messageArea.classList.add('bg-green-100', 'text-green-800');
                 }
             };
         }
@@ -554,10 +573,7 @@
             const output = document.getElementById('practice-document-output-t2');
             const messageArea = document.getElementById('message-area-t2');
 
-            if (!button) return; // Exit if element not found
-
-            // Hapus listener lama jika ada untuk mencegah duplikasi
-            button.onclick = null; 
+            if (!button) return;
 
             button.onclick = () => {
                 const absenValue = input.value.trim();
@@ -565,11 +581,11 @@
                 output.innerHTML = '';
                 
                 if (!absenValue || isNaN(parseInt(absenValue)) || parseInt(absenValue) <= 0) {
-                    messageArea.textContent = 'Mohon masukkan Nomor Absen yang valid (angka positif).';
+                    messageArea.textContent = '❌ Mohon masukkan Nomor Absen yang valid (angka positif).';
                     messageArea.classList.remove('hidden');
-                    messageArea.classList.remove('text-green-600');
-                    messageArea.classList.add('text-red-500');
-                    output.innerHTML = '<p class="text-center text-gray-500">Template dan Sumber Data akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>';
+                    messageArea.classList.remove('bg-green-100', 'text-green-800');
+                    messageArea.classList.add('bg-red-100', 'text-red-800');
+                    output.innerHTML = '<p class="text-center text-gray-500 italic">Template dan Sumber Data akan muncul di sini setelah Anda memasukkan Nomor Absen.</p>';
                     return;
                 }
 
@@ -580,29 +596,30 @@
                 if (absenNumber % 2 !== 0) {
                     // Ganjil: Surat Gaji
                     contentData = MAIL_MERGE_ODD;
-                    messageText = `Anda mendapat Template Surat Gaji Massal PT Pertamina TBK (Nomor Absen Ganjil).`;
+                    messageText = `✅ Anda mendapat Template **Surat Gaji Massal** (Nomor Absen Ganjil). Fokus pada penggabungan field data gaji.`;
                 } else {
                     // Genap: Label Undangan
                     contentData = MAIL_MERGE_EVEN;
-                    messageText = `Anda mendapat Template Label Undangan Sunat Massal (Nomor Absen Genap).`;
+                    messageText = `✅ Anda mendapat Template **Label Undangan** (Nomor Absen Genap). Fokus pada pengaturan Layout Label.`;
                 }
 
                 // Render konten
                 output.innerHTML = `
                     <h3 class="text-xl font-bold text-gray-800 mb-4">${contentData.title}</h3>
-                    <div class="mb-8">
-                        <h4 class="text-lg font-semibold border-b pb-1 text-primary">Dokumen Utama (Template Surat/Label)</h4>
+                    <div class="mb-8 p-4 border rounded-lg border-dashed border-gray-400 bg-gray-50">
+                        <h4 class="text-lg font-semibold border-b pb-1 text-primary">Dokumen Utama (Template yang Harus Dibuat)</h4>
                         ${contentData.naskah}
                     </div>
                     <div>
+                        <h4 class="text-lg font-semibold border-b pb-1 text-primary">Sumber Data (Simulasi Excel)</h4>
                         ${contentData.data}
                     </div>
                 `;
 
                 messageArea.textContent = messageText;
                 messageArea.classList.remove('hidden');
-                messageArea.classList.remove('text-red-500');
-                messageArea.classList.add('text-green-600');
+                messageArea.classList.remove('bg-red-100', 'text-red-800');
+                messageArea.classList.add('bg-green-100', 'text-green-800');
             };
         }
 
